@@ -1,0 +1,133 @@
+✅ CASE STUDY – EXPERIMENT 1
+Study and Configuration of Arduino Uno
+
+(Minimum 3 pages in simple language)
+
+⭐ 1. Introduction
+
+Arduino Uno is one of the most popular microcontroller boards used in IoT and embedded projects. It is very easy to use and helps beginners understand electronics, programming, and hardware. In this experiment, we learn how to install Arduino IDE, connect the board, and verify the working of Arduino Uno.
+(Reference: Page 11–13 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+⭐ 2. Objective (Aim)
+
+To study the Arduino Uno board, understand its components, and verify the successful installation and working with the Arduino IDE.
+
+⭐ 3. Components Required
+
+(From the manual, page 11 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+Arduino Uno
+
+USB cable
+
+Power adapter
+
+Off-board LED
+
+Jumper wires
+
+PC with Windows OS
+
+⭐ 4. Description of Arduino Uno
+
+Arduino Uno is a microcontroller board based on the ATmega328P. It has:
+
+14 Digital I/O pins (page 12)
+
+6 Analog input pins – A0 to A5
+
+1 USB port
+
+1 Power jack
+
+On-board LED on pin 13
+
+According to Page 11–12 
+
+23ITC01-Iot Laboratory Manual F…
+
+, the board also contains:
+
+Reset button
+
+Voltage regulator
+
+ICSP header
+
+External power pins
+
+Arduino can be powered through USB or a 9–12V adapter.
+
+⭐ 5. Installation Steps
+
+(From page 13 of manual 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+Install Arduino IDE from the official website.
+
+Connect the Arduino board with a USB cable.
+
+Install necessary drivers.
+
+Open Arduino IDE.
+
+Select the correct board (“Arduino Uno”).
+
+Select the COM port.
+
+Open the Blink example.
+
+Upload and verify proper working.
+
+⭐ 6. Working of the Blink Program
+
+When we upload the blink program:
+
+void setup() {
+  pinMode(13, OUTPUT);
+}
+void loop() {
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
+}
+
+
+Pin 13 LED turns ON for one second and OFF for one second.
+
+This proves the Arduino is installed and working properly.
+
+⭐ 7. Result
+
+Thus, the study and configuration of Arduino Uno was completed, and the basic LED blinking program verified correct installation.
+(Refer page 13 result 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+⭐ 8. Conclusion
+
+This experiment helped understand:
+
+The structure of Arduino
+
+How to install Arduino IDE
+
+How to upload a basic program
+
+How the microcontroller controls hardware
+
+It gives strong basics for all future IoT experiments.
