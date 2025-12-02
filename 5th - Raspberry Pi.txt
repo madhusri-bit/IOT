@@ -1,0 +1,145 @@
+✅ CASE STUDY – EXPERIMENT 5
+Study and Configuration of Raspberry Pi
+
+(3 pages in easy English)
+
+⭐ 1. Introduction
+
+Raspberry Pi is a small, powerful computer that can run an operating system like Linux. Unlike Arduino or NodeMCU, Raspberry Pi is a full single-board computer with USB ports, HDMI, Wi-Fi, Bluetooth, and GPIO pins. In IoT, it is used for advanced applications like AI, camera projects, cloud servers, and automation.
+(Refer pages 56–60 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+⭐ 2. Aim
+
+To study the basic configuration and working of the Raspberry Pi 3 Model B+ and verify GPIO programming.
+
+⭐ 3. Components Required
+
+(Page 56 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+Raspberry Pi 3 B+
+
+HDMI to VGA adapter
+
+Power supply (5V)
+
+LED
+
+DHT11 sensor
+
+Connecting wires
+
+⭐ 4. Specifications of Raspberry Pi 3 B+
+
+(Page 56–57 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+64-bit quad-core CPU @ 1.4 GHz
+
+1 GB RAM
+
+Bluetooth 4.2, Wi-Fi dual band
+
+4 USB ports
+
+HDMI output
+
+40-pin GPIO header
+
+MicroSD-based OS
+
+It is more powerful than Arduino or NodeMCU.
+
+⭐ 5. GPIO Pin Explanation
+
+(Page 57 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+Total pins: 40
+
+Usable GPIO pins: 26
+
+Supports:
+
+Digital I/O
+
+I2C
+
+SPI
+
+UART
+
+These GPIO pins can control LEDs, sensors, motors, etc.
+
+⭐ 6. Basic Python Programs
+Task 1: Blink an LED
+
+(Page 58)
+
+gpio.setmode(gpio.BOARD)
+gpio.setup(11, gpio.OUT)
+
+while True:
+    gpio.output(11, gpio.HIGH)
+    sleep(1)
+    gpio.output(11, gpio.LOW)
+    sleep(1)
+
+
+This makes the LED blink ON and OFF.
+
+Task 2: Button Controlled LED
+
+(Page 58)
+
+GPIO.setup(7, GPIO.IN)
+GPIO.setup(11, GPIO.OUT)
+
+while True:
+    if GPIO.input(7) == True:
+        GPIO.output(11, GPIO.HIGH)
+
+Task 3: DHT11 Temperature Reading
+
+(Page 60)
+
+This reads humidity and temperature using a Python library.
+
+⭐ 7. Result
+
+(Page 60 result 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+Raspberry Pi was successfully configured, and GPIO programming was verified.
+
+⭐ 8. Conclusion
+
+This experiment helps understand how Raspberry Pi acts as a mini-computer and how it can be used in IoT systems requiring:
+
+Operating system
+
+Complex sensor processing
+
+Python programming
+
+Cloud connectivity
+
+AI and image processing
+
+It forms the foundation for advanced smart-home and automation applications.
