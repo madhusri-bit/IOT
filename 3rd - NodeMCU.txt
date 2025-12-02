@@ -1,0 +1,163 @@
+✅ CASE STUDY – EXPERIMENT 3
+Study of NodeMCU ESP8266 Development Kit
+
+(3 pages in simple words)
+
+⭐ 1. Introduction
+
+NodeMCU is a Wi-Fi enabled microcontroller board used widely in IoT applications. Unlike Arduino, NodeMCU has built-in Wi-Fi, which makes it suitable for cloud connectivity and smart home automation. This experiment teaches the basics of NodeMCU ESP8266, its features, and how to configure it.
+(Refer pages 40–49 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+⭐ 2. Aim
+
+To study the NodeMCU Development Kit v1.0 and understand its specifications, pin configuration, and programming setup.
+
+⭐ 3. Components Required
+
+(Page 40 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+NodeMCU ESP8266
+
+USB Micro-B cable
+
+Arduino IDE with ESP8266 board package
+
+⭐ 4. About ESP8266 WiFi SoC
+
+(From page 40–41 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+ESP8266 is a low-cost Wi-Fi chip with:
+
+80/160 MHz processor
+
+Built-in TCP/IP stack
+
+Support for Wi-Fi b/g/n
+
+10-bit ADC
+
+PWM support
+
+3.3V logic pins
+
+NodeMCU board includes:
+
+Micro USB port
+
+Flash button
+
+Reset button
+
+Antenna
+
+GPIO pins
+
+⭐ 5. Pin Configuration Overview
+
+(Page 43 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+Digital pins: D0 to D8
+
+Analog pin: A0
+
+3.3V & GND pins
+
+Special pins for UART, SPI, and I2C
+
+Important note: ESP8266 pins are NOT 5V tolerant.
+(Page 49 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+⭐ 6. How to Use NodeMCU in Arduino IDE
+
+(From pages 44–46 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+Steps:
+
+Open Arduino IDE → Preferences
+
+Add board package URL
+
+Open Boards Manager → Search esp8266 → Install
+
+Select NodeMCU 1.0 (ESP-12E)
+
+Connect NodeMCU to PC
+
+Select COM port
+
+Upload a basic program
+
+⭐ 7. Example Program
+
+(Page 47–48 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+Simple Serial Print:
+
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+  Serial.println("ElectronicsWings");
+  delay(1000);
+}
+
+
+This verifies that:
+
+Board is detected
+
+Code uploads successfully
+
+Serial communication works
+
+⭐ 8. Result
+
+(Page 49 result 
+
+23ITC01-Iot Laboratory Manual F…
+
+)
+
+NodeMCU was studied successfully, and basic programming using Arduino IDE was verified.
+
+⭐ 9. Conclusion
+
+This experiment introduces Wi-Fi microcontrollers, enabling IoT functions like:
+
+Cloud communication
+
+Web servers
+
+Home automation
+
+Wi-Fi based sensor monitoring
+
+It forms the base for all advanced NodeMCU IoT experiments.
