@@ -1,0 +1,50 @@
+#include <WiFi.h>
+#include <WiFiClient.h>
+
+char ssid[] = "Wokwi-GUEST";   // Wokwi WiFi
+char pass[] = "";              // No password
+
+// ThingSpeak details
+unsigned long myChannelNumber = 3188351;
+const char* myWriteAPIKey = "5H305S74SVLT5E4A";
+const char* server = "api.thingspeak.com";
+
+WiFiClient client;
+int a = 0;
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, pass);
+
+  Serial.print("Connecting to WiFi");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(300);
+    Serial.print(".");
+  }
+
+  Serial.println("\nWiFi Connected!");
+  Serial.print("IP Address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {
+  a++;
+
+  if (client.connect(server, 80)) {
+    String url = "/update?api_key=" + String(myWriteAPIKey) +
+                 "&field1=" + String(a);
+
+    client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+                 "Host: " + server + "\r\n" +
+                 "Connection: close\r\n\r\n");
+
+    Serial.print("Uploaded to ThingSpeak → Value: ");
+    Serial.println(a);
+  } else {
+    Serial.println("Connection to ThingSpeak failed!");
+  }
+
+  client.stop();
+
+  delay(15000);  // ThingSpeak minimum interval = 15 sec
+}
