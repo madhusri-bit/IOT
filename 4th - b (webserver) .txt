@@ -1,0 +1,63 @@
+#include <WiFi.h>
+#include <WebServer.h>
+#include <DHT.h>
+
+// ----- DHT SENSOR SETUP -----
+#define DHTPIN 2            // D4 pin on NodeMCU
+#define DHTTYPE DHT22      // Change to DHT22 if needed
+DHT dht(DHTPIN, DHTTYPE);
+
+// ----- WiFi CREDENTIALS -----
+char ssid[] = "Wokwi-GUEST";
+char pass[] = "";
+
+// ----- WEB SERVER -----
+WebServer server(80);
+
+// ----- HANDLE ROOT -----
+void handleRoot() {
+
+  float temp = dht.readTemperature();
+  float hum  = dht.readHumidity();
+
+  // Error check
+  if (isnan(temp) || isnan(hum)) {
+    server.send(500, "text/plain", "Failed to read from DHT sensor!");
+    return;
+  }
+
+  String html = "<html><head><title>Sensor Data</title></head><body>";
+  html += "<h1>Temperature: " + String(temp) + " °C</h1>";
+  html += "<h1>Humidity: " + String(hum) + " %</h1>";
+  html += "</body></html>";
+
+  server.send(200, "text/html", html);
+}
+
+// ----- SETUP -----
+
+void setup() {
+
+  Serial.begin(115200);
+  dht.begin();
+  WiFi.begin(ssid, pass);
+
+  Serial.println("Connecting to WiFi...");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("\nConnected to WiFi!");
+  Serial.print("IP Address: ");
+  Serial.println(WiFi.localIP());
+
+  server.on("/", handleRoot);
+  server.begin();
+  Serial.println("HTTP server started");
+}
+
+// ----- LOOP -----
+void loop() {
+  server.handleClient();
+}
